@@ -10,4 +10,4 @@ l:
 d:
     Day; Advance the day
 g:
-    Log; Prints a list containing all the previous trapped amounts
+    Log; Prints a list containing all the previous trapped amounts for each day
