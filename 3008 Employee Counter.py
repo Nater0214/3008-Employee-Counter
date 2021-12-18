@@ -1,4 +1,4 @@
-import statistics as stats
+import statistics as stats #imports
 
 def recalculate_vars(): #recalculate the variables
     global total
@@ -14,7 +14,7 @@ def recalculate_vars(): #recalculate the variables
 
 print("Welcome to 3008 Employee Counter!") #greeting
 
-#initialize
+#initialize the variables
 day = int(input("To get things started, what day number is it? ")) #days
 if day < 0: #error checking
     raise Exception("What the hell! You cant have a negative day!")
@@ -31,7 +31,7 @@ for i in range(-1, day):
 
 recalculate_vars()
 
-while True:
+while True: #main loop
     txt = "{} Employees Total\n{} Employee(s) Trapped\n{} Employee(s) Roaming\n{}% Trapped\n{} Employee(s) Trapped/Lost Today\n{} Employee(s) trapped per day on average\n"
     print(txt.format(total, trapped, roaming, round(ratio, 2), log[day], round(rate)))
     inp = input()
