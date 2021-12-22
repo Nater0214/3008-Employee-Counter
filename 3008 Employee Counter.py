@@ -9,7 +9,7 @@ def recalculate_vars(): #recalculate the variables
     total = 2 * (day + 1)
     roaming = total - trapped
     ratio = 100 * (trapped / total)
-    rate = mean("log")
+    rate = mean(log)
 
 
 print("Welcome to 3008 Employee Counter!") #greeting
