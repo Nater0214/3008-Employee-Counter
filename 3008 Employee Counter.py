@@ -1,5 +1,9 @@
-from statistics import mean #imports
+#imports
+from statistics import mean
+from os import system
 
+
+#function deffinitions
 def recalculate_vars(): #recalculate the variables
     global total
     global roaming
@@ -32,6 +36,7 @@ for i in range(-1, day):
 recalculate_vars()
 
 while True: #main loop
+    system("cls")
     txt = "It is day {}\n{} Employees Total\n{} Employee(s) Trapped\n{} Employee(s) Roaming\n{}% Trapped\n{} Employee(s) Trapped/Lost Today\n{} Employee(s) trapped per day on average\n"
     print(txt.format(day, total, trapped, roaming, round(ratio, 2), log[day], round(rate)))
     inp = input()
@@ -54,7 +59,6 @@ while True: #main loop
         print("Its a new day!\n")
         log.append(0)
     elif inp == "g":
-        print(log)
-        print()
+        print(log + "\n")
 
     recalculate_vars()
