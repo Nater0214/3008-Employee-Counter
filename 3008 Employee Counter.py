@@ -39,6 +39,7 @@ while True: #main loop
     system("cls")
     txt = "It is day {}\n{} Employees Total\n{} Employee(s) Trapped\n{} Employee(s) Roaming\n{}% Trapped\n{} Employee(s) Trapped/Lost Today\n{} Employee(s) trapped per day on average\n"
     print(txt.format(day, total, trapped, roaming, round(ratio, 2), log[day], round(rate)))
+
     inp = input()
     if inp == "t":
         if roaming == 0:
@@ -47,6 +48,7 @@ while True: #main loop
             trapped += 1
             log[day] += 1
             print("Nice job\n")
+
     elif inp == "l":
         if trapped == 0:
             print("You dont got any, how the fuck did you loose one?\n")
@@ -54,11 +56,16 @@ while True: #main loop
             trapped -= 1
             log[day] -= 1
             print("Aw man!\n")
+
     elif inp == "d":
         day += 1
         print("Its a new day!\n")
         log.append(0)
+
     elif inp == "g":
         print(log + "\n")
+
+    elif inp == "e":
+        exit()
 
     recalculate_vars()
