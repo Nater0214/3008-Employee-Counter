@@ -10,4 +10,5 @@ Very easy to use.
 - d:
   - Day; Advance the day
 - g:
-  - Log; Prints a list containing all the previous trapped amounts for each day
+  - Log; Prints a list containing all the previous trapped amounts for each day  
+Use a KeyboardInterrupt (Control-C) to terminate the script.
