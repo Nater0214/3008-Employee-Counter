@@ -32,8 +32,8 @@ for i in range(-1, day):
 recalculate_vars()
 
 while True: #main loop
-    txt = "{} Employees Total\n{} Employee(s) Trapped\n{} Employee(s) Roaming\n{}% Trapped\n{} Employee(s) Trapped/Lost Today\n{} Employee(s) trapped per day on average\n"
-    print(txt.format(total, trapped, roaming, round(ratio, 2), log[day], round(rate)))
+    txt = "It is day {}\n{} Employees Total\n{} Employee(s) Trapped\n{} Employee(s) Roaming\n{}% Trapped\n{} Employee(s) Trapped/Lost Today\n{} Employee(s) trapped per day on average\n"
+    print(txt.format(day, total, trapped, roaming, round(ratio, 2), log[day], round(rate)))
     inp = input()
     if inp == "t":
         if roaming == 0:
