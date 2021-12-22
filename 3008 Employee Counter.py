@@ -66,7 +66,10 @@ while True: #main loop
         log.append(0)
 
     elif inp == "g":
-        message = log
+        for i in range(len(log)):
+            txt = "Day {}: {}"
+            print(txt.format(i, log[i]))
+            message = "Here you go!"
 
     elif inp == "e":
         exit()
