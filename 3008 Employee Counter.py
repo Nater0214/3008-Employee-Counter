@@ -1,4 +1,4 @@
-import statistics as stats #imports
+from statistics import mean #imports
 
 def recalculate_vars(): #recalculate the variables
     global total
@@ -9,7 +9,7 @@ def recalculate_vars(): #recalculate the variables
     total = 2 * (day + 1)
     roaming = total - trapped
     ratio = 100 * (trapped / total)
-    rate = stats.mean(log)
+    rate = mean("log")
 
 
 print("Welcome to 3008 Employee Counter!") #greeting
