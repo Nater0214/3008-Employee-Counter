@@ -3,7 +3,7 @@ from statistics import mean
 from os import system
 
 
-#function deffinitions
+#deffinitions
 def recalculate_vars(): #recalculate the variables
     global total
     global roaming
@@ -17,6 +17,7 @@ def recalculate_vars(): #recalculate the variables
 
 clear = lambda: system("cls")
 
+clear()
 print("Welcome to 3008 Employee Counter!") #greeting
 
 #initialize the variables
