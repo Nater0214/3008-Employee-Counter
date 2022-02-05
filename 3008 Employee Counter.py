@@ -40,8 +40,7 @@ clear()
 message = "Here we go!"
 
 while True: # Main loop
-    txt = "{}\n\nIt is day {}\n{} Employees Total\n{} Employee(s) Trapped\n{} Employee(s) Roaming\n{}% Trapped\n{} Employee(s) Trapped/Lost Today\n{} Employee(s) trapped per day on average\n"
-    print(txt.format(message, day, total, trapped, roaming, round(ratio, 2), log[day], round(rate)))
+    print(f"{message}\n\nIt is day {day}\n{total} Employees Total\n{trapped} Employee(s) Trapped\n{roaming} Employee(s) Roaming\n{round(ratio, 2)}% Trapped\n{log[day]} Employee(s) Trapped/Lost Today\n{round(rate)} Employee(s) trapped per day on average\n")
 
     inp = input()
     clear()
