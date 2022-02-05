@@ -1,10 +1,10 @@
-#imports
+# Imports
 from statistics import mean
 from os import system
 
 
-#deffinitions
-def recalculate_vars(): #recalculate the variables
+# Deffinitions
+def recalculate_vars(): # Recalculate the variables
     global total
     global roaming
     global ratio
@@ -18,15 +18,15 @@ def recalculate_vars(): #recalculate the variables
 clear = lambda: system("cls")
 
 clear()
-print("Welcome to 3008 Employee Counter!") #greeting
+print("Welcome to 3008 Employee Counter!") # Greeting
 
-#initialize the variables
-day = int(input("To get things started, what day number is it? ")) #days
-if day < 0: #error checking
+# Initialize the variables
+day = int(input("To get things started, what day number is it? ")) # Days
+if day < 0: # Error checking
     raise Exception("What the hell! You cant have a negative day!")
 
-trapped = int(input("How many employees are trapped? ")) #trapped
-if trapped < 0: #error checking
+trapped = int(input("How many employees are trapped? ")) # Trapped
+if trapped < 0: # Error checking
     raise Exception("What the hell! You cant have a negative amount trapped!")
 if trapped > 2 * (day + 1):
     raise Exception("What the hell! You cant trap more than the amount in the store!")
@@ -39,7 +39,7 @@ recalculate_vars()
 clear()
 message = "Here we go!"
 
-while True: #main loop
+while True: # Main loop
     txt = "{}\n\nIt is day {}\n{} Employees Total\n{} Employee(s) Trapped\n{} Employee(s) Roaming\n{}% Trapped\n{} Employee(s) Trapped/Lost Today\n{} Employee(s) trapped per day on average\n"
     print(txt.format(message, day, total, trapped, roaming, round(ratio, 2), log[day], round(rate)))
 
