@@ -3,20 +3,32 @@ from statistics import mean
 from os import system
 
 
-# Deffinitions
-def recalculate_vars(): # Recalculate the variables
-    global total
-    global roaming
-    global ratio
-    global rate
+# Declare variables
+day = 0
+log = []
 
-    total = 2 * (day + 1)
-    roaming = total - trapped
-    ratio = 100 * (trapped / total)
-    rate = mean(log)
+
+# Deffinitions
+class Employees:
+    total = 0
+    trapped = 0
+    roaming = 0
+    ratio = 0
+    rate = 0
+
+    def recalculate_vars(self): # Recalculate the variables
+        self.total = 2 * (day + 1)
+        self.roaming = self.total - self.trapped
+        self.ratio = 100 * (self.trapped / self.total)
+        self.rate = mean(log)
+
+employees = Employees()
+
 
 clear = lambda: system("cls")
 
+
+# Main Program
 clear()
 print("Welcome to 3008 Employee Counter!") # Greeting
 
@@ -25,38 +37,38 @@ day = int(input("To get things started, what day number is it? ")) # Days
 if day < 0: # Error checking
     raise Exception("What the hell! You cant have a negative day!")
 
-trapped = int(input("How many employees are trapped? ")) # Trapped
-if trapped < 0: # Error checking
+employees.trapped = int(input("How many employees are trapped? ")) # Trapped
+if employees.trapped < 0: # Error checking
     raise Exception("What the hell! You cant have a negative amount trapped!")
-if trapped > 2 * (day + 1):
+if employees.trapped > 2 * (day + 1):
     raise Exception("What the hell! You cant trap more than the amount in the store!")
 
-log = []
 for i in range(-1, day):
     log.append(0)
 
-recalculate_vars()
+employees.recalculate_vars()
 clear()
 message = "Here we go!"
 
+
 while True: # Main loop
-    print(f"{message}\n\nIt is day {day}\n{total} Employees Total\n{trapped} Employee(s) Trapped\n{roaming} Employee(s) Roaming\n{round(ratio, 2)}% Trapped\n{log[day]} Employee(s) Trapped/Lost Today\n{round(rate)} Employee(s) trapped per day on average\n")
+    print(f"{message}\n\nIt is day {day}\n{employees.total} Employees Total\n{employees.trapped} Employee(s) Trapped\n{employees.roaming} Employee(s) Roaming\n{round(employees.ratio, 2)}% Trapped\n{log[day]} Employee(s) Trapped/Lost Today\n{round(employees.rate)} Employee(s) trapped per day on average\n")
 
     inp = input()
     clear()
     if inp == "t":
-        if roaming == 0:
+        if employees.roaming == 0:
             message = "You got them all! How the fuck did you get another one?"
         else:
-            trapped += 1
+            employees.trapped += 1
             log[day] += 1
             message = "Nice job!"
 
     elif inp == "l":
-        if trapped == 0:
+        if employees.trapped == 0:
             message = "You dont got any, how the fuck did you loose one?"
         else:
-            trapped -= 1
+            employees.trapped -= 1
             log[day] -= 1
             message = "Aw man!"
 
@@ -74,4 +86,4 @@ while True: # Main loop
     elif inp == "e":
         exit()
 
-    recalculate_vars()
+    employees.recalculate_vars()
